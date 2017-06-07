@@ -1,25 +1,24 @@
 import React, { PropTypes } from 'react';
 
-import { View, StyleSheet, Platform, TouchableHighlight, ViewPropTypes } from 'react-native';
+import { View, StyleSheet, Platform, TouchableHighlight } from 'react-native';
 
 export default class DefaultMarker extends React.Component {
   static propTypes = {
     pressed: PropTypes.bool,
-    pressedMarkerStyle: ViewPropTypes.style,
-    markerStyle: ViewPropTypes.style,
-    enabled: PropTypes.bool,
+    pressedMarkerStyle: View.propTypes.style,
+    markerStyle: View.propTypes.style,
   };
 
   render() {
     return (
       <TouchableHighlight>
         <View
-          style={this.props.enabled ? [
+          style={[
             styles.markerStyle,
             this.props.markerStyle,
             this.props.pressed && styles.pressedMarkerStyle,
             this.props.pressed && this.props.pressedMarkerStyle,
-          ] : [styles.markerStyle, styles.disabled]}
+          ]}
         />
       </TouchableHighlight>
     );
@@ -61,8 +60,5 @@ const styles = StyleSheet.create({
         borderRadius: 20,
       },
     }),
-  },
-  disabled: {
-    backgroundColor: '#d3d3d3',
   },
 });
