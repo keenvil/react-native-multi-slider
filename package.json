@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+git@github.com:keenvil/react-native-multi-slider.git"
   },
+  "publishConfig": {
+    "registry": "http://nexus.int.myaws.io:8081/repository/keenvil-npm/"
+  },
   "keywords": [
     "react-native-multi-slider",
     "react-component",
